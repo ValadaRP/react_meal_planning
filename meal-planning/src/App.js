@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import MealList from "./MealList";
+
 function App() {
     const [mealData, setMealData] = useState(null);
     const [calories, setCalories] = useState(2000);
@@ -23,11 +24,13 @@ function App() {
     }
 
     return <div className="App">
+
+        <p className="gora">Zaplanuj swoją dietę</p>
         <section className="controls">
-            <input type="numer" placeholder="Calories" onChange={handleChange}/>
+            <input type="numer" placeholder="Kalorie np. 2000" onChange={handleChange}/>
         </section>
         <button onClick={getMealData}>Sprawdz dzienny plan!</button>
-        {mealData && <MealList mealList={mealData}/>}
+        {mealData && <MealList mealData={mealData}/>}
     </div>;
 }
 
